@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
+
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
 public abstract class User {
@@ -26,4 +28,15 @@ public abstract class User {
 
     @OneToMany
     private List<Role> roles;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
