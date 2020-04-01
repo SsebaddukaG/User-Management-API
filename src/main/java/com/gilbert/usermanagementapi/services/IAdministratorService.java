@@ -8,4 +8,5 @@ public interface IAdministratorService {
      Administrator createAdmin(Administrator administrator);
      Optional<Administrator> findAdministratorByFirstname(String name);
      void deleteAdminById(int id);
+     Optional<Administrator> findAdministratorByAdminCode(String adminCode);
 }

@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping(value = "/inventoryManager")
 public class InventoryManagerController {
     @Autowired
     private IInventoryManagerService iInventoryManagerService;
+
+
 
     @GetMapping(value = "/test")
     public String test(){
@@ -19,6 +22,7 @@ public class InventoryManagerController {
 
     @PostMapping(value = "/createInventoryManager", consumes = MediaType.APPLICATION_JSON_VALUE)
     public InventoryManager createInventoryManager(@RequestBody InventoryManager inventoryManager){
+
         return iInventoryManagerService.createInventoryManager(inventoryManager);
     }
 

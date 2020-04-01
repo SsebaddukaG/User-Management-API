@@ -10,6 +10,7 @@ import java.util.Optional;
 @Repository
 @Transactional()
 public interface AdministratorRepository extends JpaRepository<Administrator, Integer> {
-    Optional<Administrator> findAdministratorByFirstname(String name);
+    Optional<Administrator> findAdministratorByFirstName(String name);
     void deleteAdministratorById(int id);
+    Optional<Administrator> findAdministratorByAdminCode(String adminCode);
 }

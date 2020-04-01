@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 @Transactional
 public interface InventoryManagerRepository extends JpaRepository<InventoryManager, Integer> {
-    Optional<InventoryManager> findInventoryManagerByFirstname(String name);
+    Optional<InventoryManager> findInventoryManagerByFirstName(String name);
 }

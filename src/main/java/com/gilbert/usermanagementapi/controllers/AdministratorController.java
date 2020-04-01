@@ -27,4 +27,9 @@ public class AdministratorController {
     public Administrator findByName(@PathVariable String firstName){
         return iAdministratorService.findAdministratorByFirstname(firstName).get();
     }
+
+    @GetMapping(value = "/adminCiode/{adminCode}")
+    public Administrator findByAdminCode(@PathVariable String adminCode){
+        return iAdministratorService.findAdministratorByAdminCode(adminCode).get();
+    }
 }

@@ -8,4 +8,5 @@ public interface ICustomerService {
     Customer createCustomer(Customer customer);
     Optional<Customer> findCustomerByFirstName(String name);
     void deleteCustomerById(int id);
+    Optional<Customer> findCustomerByCustomerCode(String customerCode);
 }

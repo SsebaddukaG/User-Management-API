@@ -1,12 +1,13 @@
 package com.gilbert.usermanagementapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -21,20 +22,24 @@ public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
 
-    @OneToMany
-    private List<Role> roles;
+    @ManyToMany()
+    private List<Role> roles = new ArrayList<>();
+
+    public void addRole(Role role){
+        if (role!=null)roles.add(role);
+    }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", firstname='" + firstName + '\'' +
+                ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';

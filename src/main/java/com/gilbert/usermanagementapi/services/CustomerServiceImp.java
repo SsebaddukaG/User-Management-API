@@ -19,11 +19,16 @@ public class CustomerServiceImp implements ICustomerService {
 
     @Override
     public Optional<Customer> findCustomerByFirstName(String name) {
-        return customerRepoository.findCustomerByFirstname(name);
+        return customerRepoository.findCustomerByFirstName(name);
     }
 
     @Override
     public void deleteCustomerById(int id) {
         customerRepoository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Customer> findCustomerByCustomerCode(String customerCode) {
+        return customerRepoository.findCustomerByCustomerCode(customerCode);
     }
 }

@@ -26,4 +26,9 @@ public class CustomerController {
     public Customer findCustomerByFirstName(@PathVariable String firstName){
         return iCustomerService.findCustomerByFirstName(firstName).get();
     }
+
+    @GetMapping(value = "/customerCode/{customerCode}")
+    public Customer findCustomerByCode(@PathVariable String customerCode){
+        return iCustomerService.findCustomerByCustomerCode(customerCode).get();
+    }
 }

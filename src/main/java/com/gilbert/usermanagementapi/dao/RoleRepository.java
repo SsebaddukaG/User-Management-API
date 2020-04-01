@@ -1,7 +1,10 @@
 package com.gilbert.usermanagementapi.dao;
 
 import com.gilbert.usermanagementapi.domain.Role;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoleRepository extends CrudRepository<Role, Integer> {
+import java.util.Optional;
+
+public interface RoleRepository extends JpaRepository<Role, Integer> {
+    Optional<Role> findRoleByRoleName(String roleName);
 }

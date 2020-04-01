@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface CustomerRepoository extends JpaRepository<Customer, Integer> {
-    Optional<Customer> findCustomerByFirstname(String firstName);
+    Optional<Customer> findCustomerByFirstName(String firstName);
+    Optional<Customer> findCustomerByCustomerCode(String customerCode);
 }
