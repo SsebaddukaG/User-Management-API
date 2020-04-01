@@ -1,7 +1,11 @@
 package com.gilbert.usermanagementapi.dao;
 
 import com.gilbert.usermanagementapi.domain.Customer;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepoository extends CrudRepository<Customer, Integer> {
+import java.util.Optional;
+
+public interface CustomerRepoository extends JpaRepository<Customer, Integer> {
+    Optional<Customer> findCustomerByFirstName(String firstName);
+    Optional<Customer> findCustomerByCustomerCode(String customerCode);
 }

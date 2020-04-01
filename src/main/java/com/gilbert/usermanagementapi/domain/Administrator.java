@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Setter
@@ -13,5 +14,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @Entity
 public class Administrator extends User {
-    private String adminID;
+
+    @Column(name = "adminCode")
+    private String adminCode;
 }

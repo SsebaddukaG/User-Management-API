@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Setter
@@ -12,5 +14,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @Entity
 public class InventoryManager extends User{
-    private String inventoryID;
+
+    @Column(name = "inventoryManagerCode")
+    private String inventoryManagerCode;
 }
