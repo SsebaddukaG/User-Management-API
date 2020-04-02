@@ -32,4 +32,9 @@ public class InventoryManagerServiceImpl implements IInventoryManagerService {
     public void deleteInventoryManagerById(int id) {
         inventoryManagerRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<InventoryManager> findByUserName(String userName) {
+        return inventoryManagerRepository.findAdministratorByUserName(userName);
+    }
 }

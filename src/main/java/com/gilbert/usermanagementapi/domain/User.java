@@ -24,10 +24,12 @@ public abstract class User {
     private int id;
     private String firstName;
     private String lastName;
+    private String userName;
     private String email;
     private String password;
 
-    @ManyToMany()
+
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles = new ArrayList<>();
 
     public void addRole(Role role){
